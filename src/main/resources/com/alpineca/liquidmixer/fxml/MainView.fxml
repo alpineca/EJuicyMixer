@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="appWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1043.0" style="-fx-background-color: #212528;" styleClass="parrent" stylesheets="@../../../../css/MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alpineca.liquidmixer.MainViewController">
+   <children>
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="31.0" prefWidth="1041.0" styleClass="title-bar" stylesheets="@../../../../css/MainStyle.css">
+         <children>
+            <FontAwesomeIconView glyphName="MINUS" glyphStyle="-fx-fill:#fcbb2b" onMouseClicked="#minimize_app" selectionFill="#fcbb2b" size="25" styleClass="title-bar--min-btn" textAlignment="RIGHT" wrappingWidth="26.0">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView glyphName="CLOSE" glyphStyle="-fx-fill:#fcbb2b" onMouseClicked="#close_app" size="25" styleClass="title-bar--close-btn">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+         </children></HBox>
+      <VBox layoutY="31.0" prefHeight="619.0" prefWidth="200.0" style="-fx-background-color: #2A2E31;">
+         <children>
+            <Pane prefHeight="99.0" prefWidth="200.0" style="-fx-background-color: #2D2D2D;">
+               <children>
+                  <Text fill="#fcbb2b" layoutX="27.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MyLogo">
+                     <font>
+                        <Font name="System Bold Italic" size="40.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="106.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version: Alpha 1.0" textAlignment="RIGHT">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Button fx:id="buttonLiquidMixer" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="60.0" prefWidth="200.0" styleClass="menu-button" stylesheets="@../../../com.alpineca.liquidmixer.css/MainStyle.css" text="ELiquid Mixer" textFill="#c6c6c6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="buttonBaseMixer" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="60.0" prefWidth="200.0" styleClass="menu-button" stylesheets="@../../../com.alpineca.liquidmixer.css/MainStyle.css" text="Base Mixer" textFill="#c6c6c6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonRecipes" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="60.0" prefWidth="200.0" styleClass="menu-button" stylesheets="@../../../../css/MainStyle.css" text="My recipes" textFill="#c6c6c6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonOptions" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="60.0" prefWidth="200.0" styleClass="menu-button" stylesheets="@../../../com.alpineca.liquidmixer.css/MainStyle.css" text="Options" textFill="#c6c6c6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="60.0" prefWidth="200.0" styleClass="menu-button" stylesheets="@../../../com.alpineca.liquidmixer.css/MainStyle.css" text="Exit" textFill="#c6c6c6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane fx:id="baseMixerStack" layoutX="205.0" layoutY="31.0" prefHeight="619.0" prefWidth="832.0" xmlns:fx="http://javafx.com/fxml">
+      <children>
+
+         <fx:include fx:id="baseMixer" source="BaseMixer.fxml" />
+         <fx:include fx:id="options" source="Options.fxml" />
+         <fx:include fx:id="liquidMixer" source="LiquidMixer.fxml" />
+         <fx:include fx:id="myRecipes" source="MyRecipes.fxml" />
+      </children>
+      </StackPane>
+   </children>
+</AnchorPane>
