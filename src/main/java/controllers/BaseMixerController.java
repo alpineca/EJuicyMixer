@@ -9,9 +9,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import utils.AutoCalculateFields;
+import utils.FieldIntChecker;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static utils.AutoCalculateFields.autoFillTo100;
 
 public class BaseMixerController implements Initializable, ContentPanel {
 
@@ -90,17 +94,32 @@ public class BaseMixerController implements Initializable, ContentPanel {
 
     @FXML
     public void calculateVGto100(){
-        int intPGValue = Integer.parseInt(desiredPg.getText());
-        int intVGValue = Integer.parseInt(desiredVg.getText());
-//        int totalValue = intPGValue + intVGValue;
+        FieldIntChecker.checkField(desiredPg);
+        FieldIntChecker.checkField(desiredVg);
 
-        if(intPGValue > 100) desiredPg.setText("100");
-        Integer result = 100 - intPGValue;
-        desiredVg.setText(result.toString());
+        AutoCalculateFields.autoFillTo100(desiredPg, desiredVg);
     }
     @FXML
     public void calculatePGto100(){
+        FieldIntChecker.checkField(desiredPg);
+        FieldIntChecker.checkField(desiredVg);
 
+        AutoCalculateFields.autoFillTo100(desiredVg, desiredPg);
+    }
+
+    @FXML
+    public void nicBaseCalculatePGField(){
+        FieldIntChecker.checkField(baseAmountPg);
+        FieldIntChecker.checkField(baseAmountVg);
+
+        AutoCalculateFields.autoFillTo100(baseAmountVg, baseAmountPg);
+    }
+    @FXML
+    public void nicBaseCalculateVGField(){
+        FieldIntChecker.checkField(baseAmountPg);
+        FieldIntChecker.checkField(baseAmountVg);
+
+        AutoCalculateFields.autoFillTo100(baseAmountPg, baseAmountVg);
     }
 
     @Override
