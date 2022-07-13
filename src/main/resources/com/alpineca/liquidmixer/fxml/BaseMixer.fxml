@@ -87,7 +87,7 @@
                                     <Font name="Calibri Bold" size="22.0" />
                                 </font>
                             </TextField>
-                            <TextField fx:id="waterAmmount" alignment="CENTER_RIGHT" minHeight="40.0" onInputMethodTextChanged="#calculateELiquid" styleClass="mixer-text-field" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <TextField fx:id="waterAmmount" alignment="CENTER_RIGHT" minHeight="40.0" onKeyTyped="#calculateWaterTo100" styleClass="mixer-text-field" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                 <font>
                                     <Font name="Calibri Bold" size="22.0" />
                                 </font>
@@ -97,7 +97,7 @@
                                     <Font name="Calibri Bold" size="22.0" />
                                 </font>
                             </TextField>
-                            <TextField fx:id="desiredVg" alignment="CENTER_RIGHT" minHeight="40.0" onInputMethodTextChanged="#calculateELiquid" onKeyTyped="#calculatePGto100" styleClass="mixer-text-field" text="50" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                            <TextField fx:id="desiredVg" alignment="CENTER_RIGHT" minHeight="40.0" onKeyTyped="#calculatePGto100" styleClass="mixer-text-field" text="50" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                 <font>
                                     <Font name="Calibri Bold" size="22.0" />
                                 </font>

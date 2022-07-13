@@ -96,15 +96,26 @@ public class BaseMixerController implements Initializable, ContentPanel {
     public void calculateVGto100(){
         FieldIntChecker.checkField(desiredPg);
         FieldIntChecker.checkField(desiredVg);
+        FieldIntChecker.checkField(waterAmmount);
 
-        AutoCalculateFields.autoFillTo100(desiredPg, desiredVg);
+        AutoCalculateFields.autoFillTo100(desiredPg, desiredVg, waterAmmount);
     }
     @FXML
     public void calculatePGto100(){
         FieldIntChecker.checkField(desiredPg);
         FieldIntChecker.checkField(desiredVg);
+        FieldIntChecker.checkField(waterAmmount);
 
-        AutoCalculateFields.autoFillTo100(desiredVg, desiredPg);
+        AutoCalculateFields.autoFillTo100(desiredVg, desiredPg, waterAmmount);
+    }
+
+    @FXML
+    public void calculateWaterTo100(){
+        FieldIntChecker.checkField(desiredPg);
+        FieldIntChecker.checkField(desiredVg);
+        FieldIntChecker.checkField(waterAmmount);
+
+        AutoCalculateFields.autoFillTo100(waterAmmount, desiredVg, desiredPg);
     }
 
     @FXML
