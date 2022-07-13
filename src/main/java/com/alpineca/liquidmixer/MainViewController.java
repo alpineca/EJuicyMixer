@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import models.VegetableGlycerin;
+import processors.BaseLiquidProcessor;
+import utils.AppControl;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -47,14 +49,14 @@ public class MainViewController implements Initializable {
     private List<Button> menuButtonsList = new ArrayList<>();
     @FXML
     void close_app(MouseEvent event) {
-        System.exit(0);
+        AppControl.exitApplication();
     }
 
     @FXML
     private void handleButtonClicks(ActionEvent mouseEvent) {
 
         if(mouseEvent.getSource() == buttonExit){
-            System.exit(0);
+            AppControl.exitApplication();
         }
 
         if(mouseEvent.getSource() == buttonLiquidMixer){
@@ -82,13 +84,16 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void minimize_app(MouseEvent event) {
-        Application.stage.setIconified(true);
+        AppControl.minimizeApplication();
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        BaseLiquidProcessor baseLiquidProcessor = BaseLiquidProcessor.getInstance();
+
         this.loadButtons();
+        baseLiquidProcessor.loadAllBases();
 
         baseMixerController.showPanel();
 
