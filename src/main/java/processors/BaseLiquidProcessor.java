@@ -1,5 +1,6 @@
 package processors;
 
+import models.AppConfig;
 import models.BaseLiquid;
 
 import java.util.ArrayList;
@@ -13,10 +14,6 @@ public class BaseLiquidProcessor {
 
     private BaseLiquidProcessor() {
         this.basesList = new ArrayList<>();
-        createBases();
-        System.out.println("***************");
-        System.out.println("*BASES CREATED*");
-        System.out.println("***************");
     }
 
     public static BaseLiquidProcessor getInstance(){
@@ -26,11 +23,22 @@ public class BaseLiquidProcessor {
         return instance;
     }
 
-    public List<BaseLiquid> loadAllBases() {
-        System.out.println("**************");
-        System.out.println("*BASES LOADED*");
-        System.out.println("**************");
+    public List<BaseLiquid> loadAllBases(){
 
+        FilesIOProcessor.loadFile(basesList, AppConfig.BASE_LIQUIDS_SAVE_FILE);
+
+        if(basesList.size() < 1){
+            createBases();
+        }
+
+        System.out.println("***** ***** ***** ******");
+        System.out.println("*BASES LOADED FROM FILE*");
+        System.out.println("***** ***** ***** ******");
+
+        return basesList;
+    }
+
+    public List<BaseLiquid> getBasesList() {
         return basesList;
     }
 
@@ -38,10 +46,20 @@ public class BaseLiquidProcessor {
         basesList.add(newBase);
     }
 
+    public void updateRecipe(BaseLiquid baseToUpdate){
+        BaseLiquid baseToRemove;
+        for(BaseLiquid base : basesList){
+            if(base.getBaseName().equals(baseToUpdate.getBaseName())){
+                baseToRemove = base;
+                basesList.add(baseToUpdate);
+                basesList.remove(baseToRemove);
+                break;
+            }
+        }
+    }
+
     public void saveAllBases(){
-        System.out.println("*************");
-        System.out.println("*BASES SAVED*");
-        System.out.println("*************");
+        FilesIOProcessor.saveFile(basesList, AppConfig.BASE_LIQUIDS_SAVE_FILE);
     }
 
     private void createBases(){

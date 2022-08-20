@@ -61,23 +61,19 @@ public class MainViewController implements Initializable {
 
         if(mouseEvent.getSource() == buttonLiquidMixer){
             liquidMixerController.showPanel();
-            buttonLiquidMixer.getStyleClass().add("menu-button-selected");
             pressButton(buttonLiquidMixer);
         }
 
         if(mouseEvent.getSource() == buttonBaseMixer){
             baseMixerController.showPanel();
-            buttonBaseMixer.getStyleClass().add("menu-button-selected");
             pressButton(buttonBaseMixer);
         }
         if(mouseEvent.getSource() == buttonOptions){
             optionsController.showPanel();
-            buttonOptions.getStyleClass().add("menu-button-selected");
             pressButton(buttonOptions);
         }
         if(mouseEvent.getSource() == buttonRecipes){
             myRecipesController.showPanel();
-            buttonRecipes.getStyleClass().add("menu-button-selected");
             pressButton(buttonRecipes);
         }
     }
@@ -96,9 +92,10 @@ public class MainViewController implements Initializable {
         baseLiquidProcessor.loadAllBases();
 
         baseMixerController.showPanel();
+        pressButton(buttonBaseMixer);
 
-        VegetableGlycerin testVG = new VegetableGlycerin(252);
-        System.out.println(testVG.getWeigth());
+//        VegetableGlycerin testVG = new VegetableGlycerin(252);
+//        System.out.println(testVG.getWeigth());
 
     }
 
@@ -111,6 +108,7 @@ public class MainViewController implements Initializable {
     }
 
     private void pressButton(Button pressedButton){
+        pressedButton.getStyleClass().add("menu-button-selected");
         for(Button element : menuButtonsList){
             if(!element.equals(pressedButton)){
                 element.getStyleClass().clear();

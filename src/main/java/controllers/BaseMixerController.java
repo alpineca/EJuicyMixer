@@ -1,14 +1,19 @@
 package controllers;
 
 import Interfaces.ContentPanel;
+import javafx.beans.Observable;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import models.BaseLiquid;
+import processors.BaseLiquidProcessor;
 import utils.AutoCalculateFields;
 import utils.FieldIntChecker;
 
@@ -17,7 +22,7 @@ import java.util.ResourceBundle;
 
 import static utils.AutoCalculateFields.autoFillTo100;
 
-public class BaseMixerController implements Initializable, ContentPanel {
+public class    BaseMixerController implements Initializable, ContentPanel {
 
     @FXML
     private TextField baseAmountPg;
@@ -75,6 +80,18 @@ public class BaseMixerController implements Initializable, ContentPanel {
     private Button save;
 
     @FXML
+    private TextField newRecipeName;
+
+    @FXML
+    private Button saveNewRecipe;
+
+    @FXML
+    private ComboBox<BaseLiquid> recipesComBox;
+
+    private BaseLiquidProcessor baseLiquidProcessor = BaseLiquidProcessor.getInstance();
+//    private BaseLiquid loadedRecipe;
+
+    @FXML
     public void calculateELiquid(ActionEvent event) {
         resultBaseMl.setText(desiredAmmount.getText());
         resultPgMl.setText(desiredPg.getText());
@@ -89,6 +106,23 @@ public class BaseMixerController implements Initializable, ContentPanel {
 
     @FXML
     public void saveBaseLiquid(){
+        BaseLiquid newBaseLiquid = new BaseLiquid(newRecipeName.getText(), (double) Double.parseDouble(desiredAmmount.getText()));
+
+        if(recipesComBox.getValue() != null && newRecipeName.getText().equals(recipesComBox.getValue().getBaseName())){
+
+            baseLiquidProcessor.updateRecipe(newBaseLiquid);
+            getRecipesList(newBaseLiquid);
+//            recipesComBox.setValue(newBaseLiquid);
+
+        }
+        else{
+            baseLiquidProcessor.addNewBase(newBaseLiquid);
+            getRecipesList(newBaseLiquid);
+//            setLoadedRecipe();
+//            recipesComBox.setValue(newBaseLiquid);
+        }
+//        loadedRecipe = newBaseLiquid;
+        setLoadedRecipe(newBaseLiquid);
 
     }
 
@@ -133,8 +167,31 @@ public class BaseMixerController implements Initializable, ContentPanel {
         AutoCalculateFields.autoFillTo100(baseAmountPg, baseAmountVg);
     }
 
+//    @FXML
+//    public void loadRecipe(ActionEvent event){
+//
+//
+//        loadedRecipe = recipesComBox.getValue();
+//        setLoadedRecipe();
+//
+//    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        getRecipesList();
+
+        recipesComBox.valueProperty().addListener(new ChangeListener<BaseLiquid>() {
+            @Override
+            public void changed(ObservableValue<? extends BaseLiquid> observableValue, BaseLiquid baseLiquid, BaseLiquid t1) {
+                setLoadedRecipe(observableValue.getValue());
+                System.out.println("***** RECIPE SET *****");
+                System.out.println(observableValue.getValue());
+                System.out.println(" ");
+
+            }
+
+        });
 
     }
 
@@ -146,5 +203,27 @@ public class BaseMixerController implements Initializable, ContentPanel {
     @Override
     public void hidePanel() {
         baseMixerPane.toBack();
+    }
+
+    private void getRecipesList(){
+
+        ObservableList<BaseLiquid> baseLiquidObservableList = FXCollections.observableList(baseLiquidProcessor.getBasesList());
+        recipesComBox.setItems(baseLiquidObservableList);
+    }
+    private void getRecipesList(BaseLiquid updatedBase){
+
+        ObservableList<BaseLiquid> baseLiquidObservableList = FXCollections.observableList(baseLiquidProcessor.getBasesList());
+        recipesComBox.setItems(baseLiquidObservableList);
+        recipesComBox.setValue(updatedBase);
+
+    }
+
+    private void setLoadedRecipe(BaseLiquid recipeToSet){
+        try {
+            newRecipeName.setText(recipeToSet.getBaseName());
+            desiredAmmount.setText(String.valueOf(recipeToSet.getDesiredAmmount()));
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

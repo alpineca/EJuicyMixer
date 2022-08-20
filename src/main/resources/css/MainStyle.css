@@ -66,21 +66,103 @@
     -fx-background-radius: 10;
     margin-bottom: 10px;
 }
-.button-shiny-orange {
-    -fx-background-color:
-        linear-gradient(#ffd65b, #e68400),
-        linear-gradient(#ffef84, #f2ba44),
-        linear-gradient(#ffea6a, #efaa22),
-        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
-        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+.mixer-text-field:focused{
+    -fx-background-color: #444444;
+    -fx-text-fill: #00ff40;
+    -fx-border-color: #00ff40;
+    -fx-border-radius: 10;
+     
     -fx-background-radius: 10;
-    -fx-background-insets: 0,1,2,3,0;
-    -fx-text-fill: #654b00;
-    -fx-font-weight: bold;
+    margin-bottom: 10px;
+}
+.combo-box-base {
+    -fx-background-color: #444444;
+    /* -fx-text-fill: -fx-text-base-color; */
+    -fx-border-color: #1b1b1b;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    /* -fx-text-fill: white; */
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    /* -fx-effect: none; */
+    -fx-cursor: hand;
+    -fx-font-family: "Popins Medium";
+    /* -fx-font-weight: bold; */
+    /* -fx-text-fill: linear-gradient(white, #d0d0d0); */
     -fx-font-size: 20px;
+    margin-bottom: 10px;
+}
+.combo-box-base .list-cell{
+    /* -fx-background-color: #444444; */
+    /* -fx-text-fill: -fx-text-base-color; */
+    /* -fx-border-color: #1b1b1b;
+    -fx-border-radius: 10; */
+    /* -fx-background-radius: 10; */
+    -fx-text-fill: white;
+    /* -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); */
+    /* -fx-effect: none; */
+    -fx-cursor: hand;
+    -fx-font-family: "Calibri";
+    -fx-font-weight: Regular;
+    /* -fx-text-fill: linear-gradient(white, #d0d0d0); */
+    -fx-font-size: 20px;
+    margin-bottom: 10px;
+}
+.combo-box-base .list-view{
+    -fx-background-color: #44444400;
+    -fx-cursor: hand;
+    -fx-font-family: "Calibri";
+    -fx-font-weight: Regular;
+    -fx-font-size: 20px;
+    margin-bottom: 10px;
+}
+.combo-box-base .list-view .list-cell{
+    -fx-background-color: #444444;
+    /* -fx-text-fill: -fx-text-base-color; */
+    -fx-border-color: #1b1b1b;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    /* -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); */
+    /* -fx-effect: none; */
+    -fx-cursor: hand;
+    -fx-font-family: "Calibri";
+    -fx-font-weight: Regular;
+    /* -fx-text-fill: linear-gradient(white, #d0d0d0); */
+    -fx-font-size: 20px;
+    margin-bottom: 10px;
+}
+.combo-box-base .list-view .list-cell:hover{
+    -fx-background-color: #444444;
+    /* -fx-text-fill: -fx-text-base-color; */
+    -fx-border-color: #1c9c0b;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #7fc976;
+    /* -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); */
+    /* -fx-effect: none; */
+    -fx-cursor: hand;
+    -fx-font-family: "Calibri";
+    -fx-font-weight: bold;
+    /* -fx-text-fill: linear-gradient(white, #d0d0d0); */
+    -fx-font-size: 20px;
+    margin-bottom: 10px;
+}
+.button-shiny-orange {
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px;
     -fx-padding: 10 20 10 20;
 }
-.button-shiny-orange-small {
+/* .button-shiny-orange-small {
     -fx-background-color:
         linear-gradient(#ffd65b, #e68400),
         linear-gradient(#ffef84, #f2ba44),
@@ -93,4 +175,95 @@
     -fx-font-weight: bold;
     -fx-font-size: 18px;
     -fx-padding: 4 20 10 20;
+} */
+
+.button-shiny-orange-small {
+    -fx-background-color:#090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    /* -fx-effect: none; */
+    -fx-cursor: hand;
+    -fx-font-family: "Popins Medium";
+    -fx-font-weight: bold;
+    /* -fx-text-fill: linear-gradient(white, #d0d0d0); */
+    -fx-font-size: 20px;
+    /* -fx-padding: 10 20 10 20; */
+}
+.button-shiny-orange-small:hover {
+    -fx-background-color:#090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: rgb(221, 221, 221);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    /* -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px; */
+    /* -fx-padding: 10 20 10 20; */
+}
+.button-shiny-orange-small:pressed {
+    -fx-background-color:#090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: rgb(161, 159, 159);
+    -fx-effect: none;
+    /* -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px; */
+    /* -fx-padding: 10 20 10 20; */
+}
+.button-shiny-orange {
+    -fx-background-color:#090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    /* -fx-effect: none; */
+    -fx-cursor: hand;
+    -fx-font-family: "Popins Medium";
+    -fx-font-weight: bold;
+    /* -fx-text-fill: linear-gradient(white, #d0d0d0); */
+    -fx-font-size: 20px;
+    /* -fx-padding: 10 20 10 20; */
+}
+.button-shiny-orange:hover {
+    -fx-background-color:#090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: rgb(221, 221, 221);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    /* -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px; */
+    /* -fx-padding: 10 20 10 20; */
+}
+.button-shiny-orange:pressed {
+    -fx-background-color:#090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: rgb(161, 159, 159);
+    -fx-effect: none;
+    /* -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px; */
+    /* -fx-padding: 10 20 10 20; */
 }

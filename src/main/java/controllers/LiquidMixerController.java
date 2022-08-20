@@ -14,17 +14,17 @@ public class LiquidMixerController implements Initializable, ContentPanel {
     private GridPane liquidMixerPane;
 
     @FXML
-    private StackPane liquidMixerStack;
+//    private StackPane liquidMixerStack;
 
 
     @Override
     public void showPanel() {
-        liquidMixerStack.toFront();
+        liquidMixerPane.toFront();
     }
 
     @Override
     public void hidePanel() {
-        liquidMixerStack.toBack();
+        liquidMixerPane.toBack();
     }
 
     @Override

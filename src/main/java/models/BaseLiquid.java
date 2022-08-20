@@ -1,6 +1,8 @@
 package models;
 
-public class BaseLiquid {
+import java.io.Serializable;
+
+public class BaseLiquid extends Recipe{
     private String baseName;
     private double desiredAmmount;
 
@@ -31,5 +33,10 @@ public class BaseLiquid {
     }
     public BaseLiquid(){
 
+    }
+
+    @Override
+    public String toString() {
+        return baseName;
     }
 }
