@@ -1,7 +1,7 @@
 package com.alpineca.liquidmixer;
 
 import controllers.BaseMixerController;
-import controllers.LiquidMixerController;
+import controllers.QuickMixerController;
 import controllers.MyRecipesController;
 import controllers.OptionsController;
 import javafx.event.ActionEvent;
@@ -9,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import models.VegetableGlycerin;
 import processors.BaseLiquidProcessor;
 import utils.AppControl;
 
@@ -29,7 +28,7 @@ public class MainViewController implements Initializable {
     private MyRecipesController myRecipesController;
 
     @FXML
-    private LiquidMixerController liquidMixerController;
+    private QuickMixerController liquidMixerController;
 
     @FXML
     private Button buttonBaseMixer;

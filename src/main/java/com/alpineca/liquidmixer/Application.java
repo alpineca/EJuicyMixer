@@ -7,7 +7,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.io.File;
 import java.io.IOException;
 
 public class Application extends javafx.application.Application {
@@ -31,6 +30,8 @@ public class Application extends javafx.application.Application {
     }
 
     public static void main(String[] args) {
+
+
         launch();
     }
 
