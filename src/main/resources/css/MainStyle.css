@@ -1,11 +1,14 @@
-.title-bar--close-btn{
-
+.pane--title{
+    -fx-text-fill: #ffffff;
+    /* -fx-font-family: "Popins Medium"; */
+    -fx-font-weight: bold;
+    -fx-font-size: 40px;
 }
-.title-bar--min-btn{
-
-}
-.title-bar--title{
-
+.pane--sub-title{
+    -fx-text-fill: #c3c3c3;
+    /* -fx-font-family: "Popins Medium"; */
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
 }
 .selected-button
 {
@@ -267,3 +270,37 @@
     -fx-font-size: 12px; */
     /* -fx-padding: 10 20 10 20; */
 }
+
+.recipe-table--title{
+    -fx-text-fill: #51dd0b;
+    /* -fx-font-family: "Popins Medium"; */
+    -fx-font-style: italic;
+    -fx-font-size: 15px;
+}
+.recipe-table--substance{
+    -fx-text-fill: #ffa600;
+    /* -fx-font-family: "Popins Medium"; */
+    -fx-font-style: italic;
+    -fx-font-size: 15px;
+}
+.recipe-table--percents{
+    -fx-text-fill: white;
+    /* -fx-font-family: "Popins Medium"; */
+    -fx-font-style: italic;
+    -fx-font-size: 15px;
+}
+.recipe-table--ml{
+    -fx-text-fill: white;
+    /* -fx-font-family: "Popins Medium"; */
+    -fx-font-style: italic;
+    -fx-font-size: 15px;
+}
+.recipe-table--gr{
+    -fx-text-fill: white;
+    /* -fx-font-family: "Popins Medium"; */
+    -fx-font-style: italic;
+    -fx-font-size: 15px;
+}
+
+
+

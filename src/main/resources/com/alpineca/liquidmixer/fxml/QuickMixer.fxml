@@ -42,7 +42,7 @@
             <Insets top="10.0" />
          </GridPane.margin>
          <children>
-            <Label text="DESIRED LIQUID SPECS" textFill="#c3c3c3" GridPane.columnSpan="2">
+            <Label styleClass="pane--sub-title" text="DESIRED LIQUID SPECS" textFill="#c3c3c3" GridPane.columnSpan="2">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -238,10 +238,11 @@
       </GridPane>
       <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="-Infinity" prefWidth="35.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="190.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="116.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="116.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="70.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="70.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" vgrow="SOMETIMES" />
@@ -257,7 +258,7 @@
             <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="LIQUID FORMULA" textFill="#c2c2c2" GridPane.columnIndex="1" GridPane.columnSpan="2">
+            <Label styleClass="pane--sub-title" text="LIQUID FORMULA" textFill="#c2c2c2" GridPane.columnIndex="1" GridPane.columnSpan="3">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -267,7 +268,7 @@
                   <Font name="Poppins Medium" size="19.0" />
                </font>
             </TextField>
-            <Button fx:id="saveNewRecipe" maxHeight="-Infinity" maxWidth="50.0" minHeight="-Infinity" minWidth="90.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="205.0" styleClass="button-shiny-orange-small" text="Save" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="10">
+            <Button fx:id="saveNewRecipe" maxHeight="-Infinity" maxWidth="50.0" minHeight="-Infinity" minWidth="90.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="205.0" styleClass="button-shiny-orange-small" text="Save" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="10">
                <font>
                   <Font name="Poppins Medium" size="20.0" />
                </font>
@@ -281,12 +282,12 @@
                   <Insets left="65.0" />
                </GridPane.margin>
             </Button>
-            <Label text="SUBSTANCE" textFill="#51dd0b" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label styleClass="recipe-table--title" text="SUBSTANCE" textFill="#51dd0b" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label text="ml" textFill="#51dd0b" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+            <Label alignment="CENTER_RIGHT" styleClass="recipe-table--title" text="ml" textFill="#51dd0b" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -294,7 +295,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label text="mg" textFill="#51dd0b" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+            <Label styleClass="recipe-table--title" text="gr" textFill="#51dd0b" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                <font>
                   <Font size="15.0" />
                </font>
@@ -302,50 +303,42 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label text="TOTAL AMOUNT" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label styleClass="recipe-table--substance" text="TOTAL AMOUNT" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label text="BASE TOTAL" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label styleClass="recipe-table--substance" text="BASE TOTAL" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="delutantNameLabel" text="DELUTANT" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Label fx:id="delutantNameLabel" styleClass="recipe-table--substance" text="DELUTANT" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="flavourOneNameLabel" text="FLAVOUR 1" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <Label fx:id="flavourOneNameLabel" styleClass="recipe-table--substance" text="FLAVOUR 1" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="flavourTwoNameLabel" text="FLAVOUR 2" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <Label fx:id="flavourTwoNameLabel" styleClass="recipe-table--substance" text="FLAVOUR 2" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="flavourThreeNameLabel" text="FLAVOUR 3" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="8">
+            <Label fx:id="flavourThreeNameLabel" styleClass="recipe-table--substance" text="FLAVOUR 3" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="otherSubstanceNameLabel" text="OTHER SUBSTANCE" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="9">
+            <Label fx:id="otherSubstanceNameLabel" styleClass="recipe-table--substance" text="OTHER SUBSTANCE" textFill="#ffa600" GridPane.columnIndex="1" GridPane.rowIndex="9">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="targetAmountMl" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
-               <font>
-                  <Font name="System Italic" size="15.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets right="20.0" />
-               </GridPane.margin>
-            </Label>
-            <Label fx:id="baseTotalMl" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+            <Label fx:id="targetAmountMl" styleClass="recipe-table--ml" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -353,7 +346,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="delutantMl" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+            <Label fx:id="baseTotalMl" styleClass="recipe-table--ml" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -361,7 +354,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="flavourOneMl" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+            <Label fx:id="delutantMl" styleClass="recipe-table--ml" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -369,7 +362,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="flavourTwoMl" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+            <Label fx:id="flavourOneMl" styleClass="recipe-table--ml" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -377,7 +370,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="flavourThreeMl" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+            <Label fx:id="flavourTwoMl" styleClass="recipe-table--ml" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -385,7 +378,15 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="otherMl" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+            <Label fx:id="flavourThreeMl" styleClass="recipe-table--ml" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="otherMl" styleClass="recipe-table--ml" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -394,7 +395,7 @@
                </GridPane.margin>
             </Label>
 
-            <Label fx:id="targetAmountGr" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+            <Label fx:id="targetAmountGr" styleClass="recipe-table--gr" text="0" textFill="#ffa600" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -402,7 +403,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="baseTotalGr" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+            <Label fx:id="baseTotalGr" styleClass="recipe-table--gr" text="0" textFill="#ffa600" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -410,7 +411,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="delutantGr" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+            <Label fx:id="delutantGr" styleClass="recipe-table--gr" text="0" textFill="#ffa600" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -418,7 +419,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="flavourOneGr" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+            <Label fx:id="flavourOneGr" styleClass="recipe-table--gr" text="0" textFill="#ffa600" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -426,7 +427,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="flavourTwoGr" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+            <Label fx:id="flavourTwoGr" styleClass="recipe-table--gr" text="0" textFill="#ffa600" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -434,7 +435,7 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="flavourThreeGr" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+            <Label fx:id="flavourThreeGr" styleClass="recipe-table--gr" text="0" textFill="#ffa600" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -442,20 +443,63 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="otherGr" text="0" textFill="#ffa600" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+            <Label fx:id="otherGr" styleClass="recipe-table--gr" text="0" textFill="#ffa600" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER_RIGHT" styleClass="recipe-table--title" text="\%" textFill="#51dd0b" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="targetAmountPercent" styleClass="recipe-table--percents" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="baseTotalPercent" styleClass="recipe-table--percents" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="delutantPercent" styleClass="recipe-table--percents" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="flavourOnePercent" styleClass="recipe-table--percents" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="flavourTwoPercent" styleClass="recipe-table--percents" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="flavourThreePercent" styleClass="recipe-table--percents" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="targetAmountMl1213" styleClass="recipe-table--percents" text="0" textFill="#ffa600" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
             </Label>
          </children>
          <GridPane.margin>
             <Insets top="10.0" />
          </GridPane.margin>
       </GridPane>
-      <Label text="Quick Mixer" textFill="WHITE">
+      <Label styleClass="pane--title" text="Quick Mixer" textFill="WHITE">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>

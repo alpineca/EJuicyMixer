@@ -102,7 +102,7 @@
 
          <fx:include fx:id="baseMixer" source="BaseMixer.fxml" />
          <fx:include fx:id="options" source="Options.fxml" />
-         <fx:include fx:id="liquidMixer" source="LiquidMixer.fxml" />
+         <fx:include fx:id="liquidMixer" source="QuickMixer.fxml" />
          <fx:include fx:id="myRecipes" source="MyRecipes.fxml" />
       </children>
       </StackPane>
